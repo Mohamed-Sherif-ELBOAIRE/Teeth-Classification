@@ -38,38 +38,40 @@ We used TensorFlow/Keras to build a model tailored for the classification of den
 - **Training:** The model was trained on the preprocessed dataset, and early stopping was used to prevent overfitting.
 - **Hyperparameter Tuning:** Hyperparameters like filter size and number of nodes were tuned to achieve optimal model performance.
 - **Evaluation:** The model was evaluated on a test dataset, and the best accuracy achieved was 91.75%.
+  
+- **VGG16 Model**: 
+  - **Architecture**: A pre-trained VGG16 model was fine-tuned by selectively unfreezing layers and adding custom layers on top. The model achieved a test accuracy of 98.93%.
+  - **Training Details**: Early stopping and hyperparameter tuning were applied, with a final learning rate of 0.0001.
 
-## Results
+- **MobileNetV2 Model**: 
+  - **Architecture**: A pre-trained MobileNetV2 model was fine-tuned by freezing the base layers and adding custom layers. The model achieved a test accuracy of 95.90%.
+  - **Training Details**: The model was trained with a focus on efficient computation, using global average pooling and dropout for regularization.
 
-### Confusion Matrix
+    
+### 4. Results
+- **Confusion Matrix**: Shows the classification performance across different classes.
+- **Training and Validation Accuracy/Loss**: Provides insights into the model's performance during training.
+- **Test Loss and Accuracy**: Evaluates the model's generalization capability.
+- **TensorBoard Visualization**: Logs the training process and visualizes the performance of different hyperparameter settings.
+- **Model Saving and Evaluation** :The base-trained model was saved for future use in inference, evaluation, or further training. The model achieved a test accuracy of 98.44% on the test dataset.
 
-The confusion matrix shows the classification performance across different classes.
+### 5. Model Deployment
+The trained VGG16 model was deployed using Streamlit, providing an interactive interface for image classification.
 
-### Training and Validation Accuracy/Loss
+- **Streamlit App**: 
+  - **Functionality**: Users can upload an image, and the model predicts the class. The app allows users to compare the predicted class with the actual class.
+  - **User Interface**: The app is user-friendly, with features like image upload, prediction display, and class comparison.
 
-Training and validation accuracy and loss curves provide insights into the model's performance during training.
-
-### Test Loss and Accuracy
-
-Test loss and accuracy curves are plotted to evaluate the model's generalization capability.
-
-## TensorBoard Visualization
-
-TensorBoard was used to log the training process and visualize the performance of different hyperparameter settings.
-
-## Model Saving and Evaluation
-
-The trained model was saved for future use in inference, evaluation, or further training. The model achieved a test accuracy of 98.44% on the test dataset.
 
 ## How to Run the Code
 
 1. Clone the repository.
-2. Install the required libraries: TensorFlow, Keras, Matplotlib, Seaborn, etc.
+2. Install the required libraries: TensorFlow, Keras, Matplotlib, Seaborn, Streamlit, etc...
 3. Place the dataset in the appropriate folders.
 4. Run the preprocessing script to prepare the data.
 5. Train the model by executing the training script.
 6. Use TensorBoard to visualize the training process.
 
 ## Conclusion
+This project successfully developed and deployed multiple models for accurate teeth classification. The results demonstrated that the models, including VGG16 and MobileNetV2,and custom CNN architecture, can effectively distinguish between different classes with high accuracy. These models are valuable tools for enhancing AI-driven dental solutions, contributing to improved diagnostic precision and better patient outcomes. The deployment using Streamlit further extends the utility of these models, providing an accessible and interactive platform for real-time image classification.
 
-This project successfully developed a model for accurate teeth classification. The results demonstrated that the model can effectively distinguish between different classes with high accuracy, making it a valuable tool for AI-driven dental solutions.
